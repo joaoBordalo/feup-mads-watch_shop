@@ -9,31 +9,24 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class SucessOrderInterface extends JFrame {
 
 	private JPanel contentPane;
+	private MainWindow previousWindow;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					SucessOrderInterface frame = new SucessOrderInterface();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
 	 */
-	public SucessOrderInterface() {
+	public SucessOrderInterface(MainWindow previousMenu) {
+		
+		this.previousWindow=previousMenu;
 		setTitle("Sucess");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -48,6 +41,13 @@ public class SucessOrderInterface extends JFrame {
 		contentPane.add(lblYourWatchHas);
 		
 		JButton btnOk = new JButton("OK");
+		btnOk.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				previousMenu.setEnabled(true);
+				previousMenu.setVisible(true);
+			}
+		});
 		btnOk.setBounds(163, 169, 97, 25);
 		contentPane.add(btnOk);
 	}
