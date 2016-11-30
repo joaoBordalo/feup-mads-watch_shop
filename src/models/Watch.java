@@ -1,5 +1,7 @@
 package models;
 
+import java.util.Random;
+
 public class Watch {
 
 	private static int LAST_ID = 0;
@@ -15,7 +17,7 @@ public class Watch {
 		watch.id = LAST_ID++;
 		watch.name = "A watch";
 		watch.brand = brand;
-		watch.model = "T10";
+		watch.model = "T" + new Random().nextInt(10);
 		watch.price = 1f;
 
 		return watch;
