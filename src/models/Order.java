@@ -26,7 +26,7 @@ public class Order {
 	}
 	
 	public String getReceipt(Currency currency) {
-		return "Customer: " + customer.getName() + "\n" + "Watch brand: " + watch.brand
+		return "Customer: " + customer.getName() + "\n" + "Watch brand: " + watch.brand + "\n"
 		+ "Watch name: " + watch.name + "\n" + "Price: " + getPrice(currency);
 	}
 }
