@@ -66,8 +66,8 @@ public class OrderWatchInterface extends JFrame {
 		lblWatchSelected.setBounds(27, 23, 123, 25);
 		contentPane.add(lblWatchSelected);
 		
-		JLabel lblWatchName = new JLabel(watch.name);
-		lblWatchName.setBounds(37, 70, 56, 16);
+		JLabel lblWatchName = new JLabel(watch.name + " - " + watch.model);
+		lblWatchName.setBounds(27, 70, 168, 16);
 		contentPane.add(lblWatchName);
 		
 		JLabel lblUSD = new JLabel("USD");
